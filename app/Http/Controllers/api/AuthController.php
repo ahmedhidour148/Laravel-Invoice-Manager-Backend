@@ -32,7 +32,7 @@ class AuthController extends Controller
         UserRegistered::dispatch($user);
         return response()->json([
             'msg' => 'register successfully and code verfication sent',
-            'data' => $validated
+            'data' => $user
         ]);
     }
     public function login(request $request)
