@@ -9,7 +9,7 @@
 <body>
     <h2>hello ser </h2>
     <p> your otp code : </p>
-    <h1>style = "color:blue;">{{ $code }}</h1>
+    <h1>style = "color:red;">{{ $code }}</h1>
     <p>this code is valid for ten minuites only </p>
 </body>
 

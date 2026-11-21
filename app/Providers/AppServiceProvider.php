@@ -28,6 +28,12 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('limit5', function (Request $request) {
             return Limit::perMinute(5)->by($request->user()?->id ?: $request->ip());
         });
+        RateLimiter::for('Limiter-Resend-code', function (Request $request) {
+            return Limit::perMinute(1)->by($request->ip());
+        });
+        RateLimiter::for('Limiter-Verfiy-email', function (Request $request) {
+            return Limit::perMinute(5)->by($request->ip());
+        });
 
     }
 }

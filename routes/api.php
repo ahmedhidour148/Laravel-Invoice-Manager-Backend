@@ -35,4 +35,7 @@ Route::middleware('auth:sanctum')->prefix('invoices')->group(function () {
 });
 
 //sending otp code 
-Route::post('verify-email', [AuthController::class, 'verfiyemail']);
+Route::post('verify-email', [AuthController::class, 'verfiyemail'])->middleware('throttle:Limiter-Verfiy-email');
+
+//resending otp code 
+Route::post('resend-code', [AuthController::class, 'resendotpcode'])->middleware('throttle:Limiter-Resend-code');
